@@ -349,6 +349,42 @@
         <div class="col-md-2">
         </div>
       </div>
+      
+      <div class="row">
+      <div class="col-md-2">
+      </div>
+      <!--------------------------
+            Registro Raza
+        --------------------------->
+      <div class="col-md-4">
+      	<div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Registro Enfermedad</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" method="post" action="EnfermedadController">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Enfermedad</label>
+                  <!--<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">-->
+                  <input type="text" class="form-control" name="enfermedad" id="ejemploImputNombre" placeholder="Nombre de la enfermedad" required>
+                </div>
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-primary">Agregar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-2">
+      </div>
+      
+      </div>
+        
   </div>
   
   <footer class="main-footer">

@@ -41,3 +41,8 @@ body, html {
 .collapsibleNavbar{
   background-color: #CC66CC;
 }
+
+.letra-login{
+	font-family: 'Courgette', cursive;
+	font-size: 3em;
+}

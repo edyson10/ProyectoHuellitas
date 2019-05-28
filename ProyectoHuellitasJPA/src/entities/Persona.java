@@ -236,5 +236,4 @@ public class Persona implements Serializable {
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudad = ciudad;
 	}
-
 }

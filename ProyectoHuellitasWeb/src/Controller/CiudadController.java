@@ -42,7 +42,7 @@ public class CiudadController extends HttpServlet {
 		
 		String ciudad = request.getParameter("ciudad");
 		
-		System.out.println(ciudad);
+		//System.out.println(ciudad);
 		Ciudad c = new Ciudad();
 		c.setNombreCiudad(ciudad);
 		

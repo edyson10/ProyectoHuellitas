@@ -49,7 +49,7 @@ public class PerroController extends HttpServlet {
 		String costo = request.getParameter("costo");
 		String raza = request.getParameter("raza");
 		
-		System.out.println(nombre_can + edad + estado + costo + raza);
+		//System.out.println(nombre_can + edad + estado + costo + raza);
 		
 		Perro pe = new Perro();
 		Raza ra = new Raza();

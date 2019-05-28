@@ -1,6 +1,5 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,13 +69,13 @@
           </ul>
           </div>  
     </nav>
-<!--------------------------
+		<!--------------------------
             Formulario Adopción
         --------------------------->
 		<div class="container">
 		<c:set var="alerta" scope="request" value = "${requestScope.msgResultado}"/>
 		<c:if test="${alerta!=null}">  
-			<div class="alert alert-success alert-dismissible" role="alert">
+			<div class="alert alert-success alert-dismissible" role="alert" style="width:100%;">
 			<button type="button" class="close" data-dismiss="alert">&times;</button>
 		  		<c:out value="${alerta}"/>
 			</div>
@@ -86,17 +85,27 @@
               <h3> Registro Perrito </h3>
             </legend>
           </div>
-          <form>
+          <form action="FormularioAdopcion" method="post">
             <div class="row">
               <div class="col-md-1">
               </div>
               <div class="col-md-5">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Fecha Actual</label>
-                  <input type="date" class="form-control" id="ejemploImputNombre" placeholder="Fecha Actual">
+              	<div class="form-group">
+                  <label for="exampleInputEmail1">Nombre</label>
+                  <input type="text" name="nombre" class="form-control" id="ejemploImputNombre" placeholder="Escriba su nombre" required>
                 </div>
                 
-                <jsp:useBean id="fDao" class="model.FormularioAdopcionDAO" scope="request"></jsp:useBean>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Apellido</label>
+                  <input type="text" name="apellido" class="form-control" id="ejemploImputNombre" placeholder="Escriba su apellido" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Cédula</label>
+                  <input type="number" name="cedula" class="form-control" id="exampleInputPassword1" placeholder="Cedula" required>
+                </div>
+                
+                <jsp:useBean id="cDao" class="model.CiudadDAO" scope="request"></jsp:useBean>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Ciudad</label>
                   <select id="ciudad" name="ciudad" class="form-control select2" style="width: 100%;">
@@ -106,121 +115,106 @@
                   </select>
                 </div>
 
-                <div class="form-group-">
-                  <label for="exampleInputEmail1">Nombre</label>
-                  <input type="nombre" class="form-control" id="ejemploImputNombre" placeholder=" ">
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Cédula</label>
-                  <input type="edad" class="form-control" id="exampleInputPassword1" placeholder="edad">
-                </div>
-
                 <div class="form-group">
                   <label for="exampleInputEmail1">Fecha de Nacimiento</label>
-                  <input type="fechaNacimiento" class="form-control" id="ejemploImputNombre" placeholder="dd/mm/aaaa">
+                  <input type="date" name="fechaNac" class="form-control" id="ejemploImputNombre" placeholder="dd/mm/aaaa" required>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Barrio de Residencia</label>
-                  <input type="barrio" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                  <input type="text" name="barrio" class="form-control" id="exampleInputPassword1" placeholder="Escriba el barrio de residencia" required>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Dirección de Residencia</label>
-                  <input type="direccion" class="form-control" id="exampleInputPassword1" placeholder=" ">
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Email</label>
-                  <input type="email" class="form-control" id="exampleInputPassword1" placeholder="ejemplo@gmail.com">
+                  <input type="text" name="direccion" class="form-control" id="exampleInputPassword1" placeholder="Escriba la direccion de residencia" required>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Teléfono Fijo</label>
-                  <input type="telefonoFijo" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                  <input type="number" name="fijo" class="form-control" id="exampleInputPassword1" placeholder="Teléfono" required>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Teléfono Celular</label>
-                  <input type="telefonoCelular" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                  <input type="number" name="celular" class="form-control" id="exampleInputPassword1" placeholder="Número de celular" required>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Profesión</label>
-                  <input type="profesion" class="form-control" id="exampleInputPassword1" placeholder=" ">
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Trabajo Actual</label>
-                  <input type="trabajoActual" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                  <input type="text" name="profesion" class="form-control" id="exampleInputPassword1" placeholder="Escriba su profesión" required>
                 </div>
              </div>
 
-             <div class="col-md-5">   
-              <div class="form-group">
-                  <label for="exampleInputPassword1">¿Cuántos adultos viven en tu casa?</label >
-                  <input type="P1" class="form-control" id="exampleInputPassword1" placeholder=" "  >
+             <div class="col-md-5">  
+             	<div class="form-group">
+                  <label for="exampleInputPassword1">Trabajo Actual</label>
+                  <input type="text" name="trabajo" class="form-control" id="exampleInputPassword1" placeholder="Escriba a que se dedica" required>
                 </div>
-
-                <div class="form-group">
-                  <label for="exampleInputPassword1">¿Cuántos ninos viven en tu casa?</label>
-                  <input type="P2" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                 
+              	<div class="form-group">
+                  <label for="exampleInputPassword1">¿Cuántos adultos viven en tu casa?</label >
+                  <input type="number" name="adultos" class="form-control" id="exampleInputPassword1" placeholder="Adultos" required>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">¿Cuántos niños viven en tu casa?</label>
-                  <input type="P3" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                  <input type="number" name="ninos" class="form-control" id="exampleInputPassword1" placeholder="Niños" required>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">¿Edad de los ninos?</label>
-                  <input type="P4" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                  <input type="number" name="edades" class="form-control" id="exampleInputPassword1" placeholder="Edades" required>
                 </div>
 
+                <jsp:useBean id="pDao" class="model.PerroDAO" scope="request"></jsp:useBean>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">¿Nombre del perro en el que estas interesado?</label>
-                  <input type="P5" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                  <label for="exampleInputPassword1">Perro</label>
+                  <select id="perro" name="perro" class="form-control select2" style="width: 100%;">
+                    <c:forEach var="perros" items="${pDao.list()}">
+							<option value="${perros.nombre}">${perros.nombre}</option>
+						</c:forEach>
+                  </select>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">¿En qué tipo de perro estas interesado?</label>
-                  <input type="P6" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                  <input type="text" name="tipoperro" class="form-control" id="exampleInputPassword1" placeholder="Tipo de perro" required>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">¿Has tenido un perro antes?</label>
-                  <input type="P7" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                  <select id="perroAntes" name="perroAntes" class="form-control select2" style="width: 100%;">
+                  	<option value="Si">Si</option>
+                  	<option value=No">No</option>
+                  </select>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">¿Por qué quieres adoptar un perro?</label>
-                  <input type="P8" class="form-control" id="exampleInputPassword1" placeholder=" ">
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputPassword1">¿Por qué quieres adoptar un perro?</label>
-                  <input type="P9" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                  <input type="text" name="porqueadoptar" class="form-control" id="exampleInputPassword1" placeholder="¿Por qué?" required>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">¿Sabes la responsabilidad?</label>
-                  <input type="P10" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                  <select id="responsabilidad" name="responsabilidad" class="form-control select2" style="width: 100%;">
+                  	<option value="Si">Si</option>
+                  	<option value=No">No</option>
+                  </select>
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputPassword1">¿Cuáles seran las causas por las que ya no tendrias a tu perro?</label>
-                  <input type="P11" class="form-control" id="exampleInputPassword1" placeholder=" ">
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputPassword1">¿Permitirias que uno de nuestros voluntarios fuera a tu casa antes y despues de la adopción?</label>
-                  <input type="P11" class="form-control" id="exampleInputPassword1" placeholder=" ">
+                  <label for="exampleInputPassword1">¿Permitirías que uno de nuestros voluntarios fuera a tu casa antes y después de la adopción?</label>
+                  <select id="visita" name="visita" class="form-control select2" style="width: 100%;">
+                  	<option value="Si">Si</option>
+                  	<option value=No">No</option>
+                  </select>
                 </div>
               </div>
               <div class="col-md-1">
               </div>
           </div> 
+          
           <div class="row">
             <div class="col-md-12" align="center">
                <div class="box-footer">
@@ -239,25 +233,26 @@
         <div class="col-md-4">
           <p>Huellitas &copy; Todos los derechos reservados</p>
         </div>
-        <div class="col-md-4">
-          <div class="row">
-            <div class="col-md-4">
-              <a class="fab" href="https://www.facebook.com/shadiaoc" target="_blank"><i style="font-size:2em; color: #d5d0d0;" class="fab fa-facebook"></i></a>
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+          <div class="row" style="font-size:1.5em; ">
+          <div class="col-md-2"></div>
+            <div class="col-md-2">
+              <a class="fab" href="https://www.facebook.com/shadiaoc" target="_blank"><i style="color: #d5d0d0;" class="fab fa-facebook"></i></a>
             </div>
-            <div class="col-md-4">
-              <a class="fab" href="https://www.facebook.com/AdriisQuijano" target="_blank"><i style="font-size:2em; color: #d5d0d0;" class="fab fa-twitter"></i></a>
+            <div class="col-md-2">
+              <a class="fab" href="https://www.facebook.com/AdriisQuijano" target="_blank" ><i style="color: #d5d0d0;" class="fab fa-twitter"></i></a>
             </div>
-            <div class="col-md-4">
-              <a class="fab" href="https://github.com/edyson10" target="_blank"><i style="font-size:2em; color: #d5d0d0;" class="fab fa-github"></i></a>
+            <div class="col-md-2">
+              <a class="fab" href="https://github.com/edyson10" target="_blank"><i style=" color: #d5d0d0;" class="fab fa-github"></i></a>
             </div>
+            <div class="col-md-2"></div>
           </div>
         </div>
-        <div class="col-md-2"></div>
       </div>
     </div>  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 </body>
 </html>

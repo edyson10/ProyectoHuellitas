@@ -31,10 +31,12 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  
+  <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet"> 
 </head>
 <body >
 	<div class="login-box">
- 		<div class="login-logo">
+ 		<div class="login-logo letra-login">
    			<a href="login.jsp"><b>Admin  </b> Huellitas</a>
  		</div>
  		<!-- /.login-logo -->
@@ -59,7 +61,7 @@
   				</div>
 			</form>
 			<hr>
-			<div align="center">
+			<div class="letra-login" style="font-size:1em;" align="center">
 				<a href="#">¿Has olvidado su contraseña?</a><br>
 			</div>
   		</div>

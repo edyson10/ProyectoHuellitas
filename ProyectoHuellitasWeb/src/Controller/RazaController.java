@@ -42,6 +42,8 @@ public class RazaController extends HttpServlet {
 		
 		String nom_raza = request.getParameter("raza");
 		
+		System.out.println("La raza es: " + nom_raza);
+		
 		Raza ra = new Raza();
 		ra.setNombreRaza(nom_raza);
 		

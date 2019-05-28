@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import entities.Enfermedad;
+import model.EnfermedadDAO;
+
 /**
  * Servlet implementation class EnfermedadController
  */
@@ -36,6 +39,17 @@ public class EnfermedadController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		String enfermedad = request.getParameter("enfermedad");
+		
+		Enfermedad e = new Enfermedad();
+		e.setNombreEnfermedad(enfermedad);
+		
+		EnfermedadDAO eDao = new EnfermedadDAO();
+		eDao.insert(e);
+		
+		request.setAttribute("msgResultado", "Se ha registrado la enfermedad correctamente");
+		request.getRequestDispatcher("/agregar.jsp").forward(request, response);
 	}
 
 }
