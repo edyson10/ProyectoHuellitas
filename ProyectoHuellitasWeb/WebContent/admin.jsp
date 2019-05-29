@@ -230,7 +230,7 @@
       </form>
       <!-- /.search form -->
       
-      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <!-- Panel navegacion izquierdo start -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Navegacion Principal</li>
         <li class="treeview">
@@ -241,32 +241,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          	<li class="treeview">
-	          	<a href="#">
-	            <i class="fa fa-edit"></i> <span>Perro</span>
-	            <span class="pull-right-container">
-	              <i class="fa fa-angle-left pull-right"></i>
-	            </span>
-	          	</a>
-	          	<ul class="treeview-menu">
-		            <li><a href="perro.jsp"><i class="fa fa-circle-o"></i> Registrar perro</a></li>
-		            <li><a href="listarPerro.jsp"><i class="fa fa-circle-o"></i> Listar perro</a></li>
-	          	</ul>
-        	</li>
-        	<li class="treeview">
-	          	<a href="#">
-	            <i class="fa fa-edit"></i> <span>Persona</span>
-	            <span class="pull-right-container">
-	              <i class="fa fa-angle-left pull-right"></i>
-	            </span>
-	          	</a>
-	          	<ul class="treeview-menu">
-		            <li><a href="persona.jsp"><i class="fa fa-circle-o"></i> Registrar persona</a></li>
-		            <li><a href="listarPersona.jsp"><i class="fa fa-circle-o"></i> Listar perro</a></li>
-	          	</ul>
-        	</li>
-        	<li><a href="agregar.jsp"><i class="fa fa-circle-o"></i> Agregar</a></li>
-         </ul>
+            <li><a href="perro.jsp"><i class="fa fa-circle-o"></i> Formulario perro</a></li>
+            <li><a href="agregar.jsp"><i class="fa fa-circle-o"></i> Agregar</a></li>
+          </ul>
         </li>
         
         <li class="treeview">
@@ -277,11 +254,68 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-folder"></i> <span>Adopcion</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+              </a>
+            <ul class="treeview-menu">
+              <li><a href="buscarAdoptador.jsp"><i class="fa fa-circle-o"></i>Buscar Adoptador</a></li>
+              <li><a href="listaAdoptadores.jsp"><i class="fa fa-circle-o"></i>Lista de Adoptadores</a></li>
+              <li><a href="agregarAdoptador.jsp"><i class="fa fa-circle-o"></i>Agregar Adoptador</a></li>
+            </ul>
+            </li> 
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-folder"></i> <span>Padrino</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+              </a>
+            <ul class="treeview-menu">
+              <li><a href="buscarPadrino.jsp"><i class="fa fa-circle-o"></i>Buscar Padrino</a></li>
+              <li><a href="listaPadrinos.jsp"><i class="fa fa-circle-o"></i>Lista de Padrinos</a></li>
+              <li><a href="agregarPadrino.jsp"><i class="fa fa-circle-o"></i>Agregar Padrino</a></li>
+            </ul>
+            </li> 
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-folder"></i> <span>Tratamiento</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+              </a>
+            <ul class="treeview-menu">
+              <li><a href="tratamiento.jsp"><i class="fa fa-circle-o"></i>Registrar Tratamiento</a></li>
+              <li><a href="listarTratamiento.jsp"><i class="fa fa-circle-o"></i>Lista</a></li>
+            </ul>
+            </li> 
+
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-folder"></i> <span>Candidatos</span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+              </a>
+            <ul class="treeview-menu">
+              <li><a href="listaCandidatosPadrino.jsp"><i class="fa fa-circle-o"></i>Candidato a padrino</a></li>
+              <li><a href="listaCandidatoAdoptar.jsp"><i class="fa fa-circle-o"></i>Candidato a adoptar</a></li>
+            </ul>
+            </li>
+           <!--
             <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Adoptar</a></li>
             <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Apadrinar</a></li>
+            <li><a href="tratamiento.html"><i class="fa fa-circle-o"></i> Tratamientos</a></li>
+           --> 
           </ul>
         </li>        
       </ul>
+      <!-- Panel navegacion izquierdo end -->
     </section>
     <!-- /.sidebar -->
   </aside>
