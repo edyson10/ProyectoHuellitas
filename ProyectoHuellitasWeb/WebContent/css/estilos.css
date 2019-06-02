@@ -44,5 +44,14 @@ body, html {
 
 .letra-login{
 	font-family: 'Courgette', cursive;
-	font-size: 3em;
+	font-size: 2em;
+}
+
+.letra-menu{
+	font-family: 'Acme', sans-serif;
+	font-size: 1.2em;
+}
+
+.imagen-card{
+	height: 15rem;
 }

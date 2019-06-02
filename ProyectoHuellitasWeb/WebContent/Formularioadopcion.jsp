@@ -21,54 +21,67 @@
 		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">  
 		<link href="https://fonts.googleapis.com/css?family=Boogaloo|Patrick+Hand&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Acme|Boogaloo|Patrick+Hand&display=swap" rel="stylesheet">
+		<!-- Google font Courgette -->
+  		<link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet"> 
+  		<!-- Acme -->
+		<link href="https://fonts.googleapis.com/css?family=Acme|Anton&display=swap" rel="stylesheet">
 </head>
 <body background="img/fondo7.jpg">
-	<nav class="navbar navbar-expand-md navbar-light navbar-light " style="background-color: #CC99FF;">
-            <a class="" href="index.html"><img src="img/icono.png" alt="logo" style="width:40px;"></a> 
-            <a class="navbar-brand letra" href="index.html" style="">Huellitas</a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-        <div class="collapse navbar-collapse " id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Adopta
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="#">¿Qué desea saber?</a>
-                          <a class="dropdown-item" href="#">Nuestros perros</a>
-                          <a class="dropdown-item" href="adopcion.html">Formulario de adopción</a>
-                        </div>
-                    </li>
-                  </li>
-                <li class="nav-item">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Apadrina
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="#">¿Que desea saber?</a>
-                      <a class="dropdown-item" href="#">Nuestros perros</a>
-                      <a class="dropdown-item" href="#">Formulario de padrino</a>
-                    </div>
-                </li>
-                </li>    
-            </ul>
-        </div>
-        <div class="justify-content-center">
-          <ul class="navbar-nav"> 
-          <li class="nav-item">
-              <a class="nav-link js-scroll-trigger " data-toggle="modal" data-target="#exampleModalCenter" href="admin.jsp"><i class="fa fa-user" style="font-size:36px"></i>
-              </a>
-          </li>
-          </ul>
-          </div>  
-    </nav>
+	<!-- Menú nav start -->
+	<nav class="navbar navbar-expand-md navbar-light navbar-light" style="background-color: #CC99FF;">
+		<a class="" href="index.html"><img src="img/icono.png" alt="logo" style="width:40px;"></a> 
+  		<a class="navbar-brand letra" href="index.jsp" style="">Huellitas</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+  		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+    		<ul class="navbar-nav letra-menu">
+	      		<li class="nav-item">
+	        		<a class="nav-link" href="index.jsp">Inicio</a>
+	      		</li>
+	      		<li class="nav-item">
+	        		<li class="nav-item dropdown">
+			        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          	Adopta
+			        	</a>
+				        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				          <a class="dropdown-item" href="#">¿Que desea saber?</a>
+				          <a class="dropdown-item" href="#">Nuestros perros</a>
+				          <a class="dropdown-item" href="Formularioadopcion.jsp">Formulario de adopción</a>
+				        </div>
+		    		</li>
+	      			<li class="nav-item">
+	        			<li class="nav-item dropdown">
+		        		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          		Apadrina
+		        		</a>
+			        	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			          		<a class="dropdown-item" href="#">¿Que desea saber?</a>
+			          		<a class="dropdown-item" href="#">Nuestros perros</a>
+			          		<a class="dropdown-item" href="Formularioapadrinar.jsp">Formulario de padrino</a>
+			        	</div>
+		    		</li> 
+		    		<li class="nav-item">
+	        			<a class="nav-link" href="donacion.jsp">Donaciones</a>
+	      			</li>  
+		    		<li class="nav-item">
+	        			<a class="nav-link" href="contacto.jsp">Contacto</a>
+	      			</li> 
+    			</ul>
+  			</div>
+  			<!-- 
+  			<div class="">
+  				<ul class="navbar-nav"> 
+					<li class="nav-item">
+		  				<a class="nav-link js-scroll-trigger " data-toggle="modal" data-target="#exampleModalCenter" href="admin.jsp"><i class="fa fa-user" style="font-size:36px"></i>
+		  				</a>
+	  				</li>
+  				</ul>
+ 	  		</div> 
+ 	  	 	-->	
+	</nav>
+	<!-- Menú nav end -->
+	
 		<!--------------------------
             Formulario Adopción
         --------------------------->
@@ -81,9 +94,7 @@
 			</div>
 		</c:if>
       	<div class="box-header with-border" align="center">
-            <legend>  
-              <h3> Registro Perrito </h3>
-            </legend>
+              <h3 class="letra-login"> Registro Perrito </h3>
           </div>
           <form action="FormularioAdopcion" method="post">
             <div class="row">
