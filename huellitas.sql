@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-05-2019 a las 15:56:49
+-- Tiempo de generación: 02-06-2019 a las 04:41:17
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -96,8 +96,10 @@ INSERT INTO `ciudad` (`id_ciudad`, `nombre_ciudad`) VALUES
 (6, 'Medellin'),
 (15, 'Miami'),
 (8, 'Neiva'),
+(18, 'Nueva York'),
 (12, 'Pereira'),
 (11, 'Santa Marta'),
+(19, 'Silicon Valley'),
 (10, 'Sincelejo'),
 (13, 'Valledupar');
 
@@ -117,7 +119,7 @@ CREATE TABLE `enfermedad` (
 --
 
 INSERT INTO `enfermedad` (`id_enfermedad`, `nombre_enfermedad`) VALUES
-(0, 'Muerto');
+(1, 'Moquillo');
 
 -- --------------------------------------------------------
 
@@ -237,7 +239,8 @@ INSERT INTO `raza` (`id_raza`, `nombre_raza`) VALUES
 (13, 'Pendejo'),
 (4, 'Pincher'),
 (12, 'Pitbull'),
-(15, 'puto');
+(15, 'puto'),
+(16, 'Rottweiler');
 
 -- --------------------------------------------------------
 
@@ -365,7 +368,13 @@ ALTER TABLE `apadrinar`
 -- AUTO_INCREMENT de la tabla `ciudad`
 --
 ALTER TABLE `ciudad`
-  MODIFY `id_ciudad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_ciudad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT de la tabla `enfermedad`
+--
+ALTER TABLE `enfermedad`
+  MODIFY `id_enfermedad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `formularioadopcion`
@@ -383,7 +392,7 @@ ALTER TABLE `formularioapadrinar`
 -- AUTO_INCREMENT de la tabla `raza`
 --
 ALTER TABLE `raza`
-  MODIFY `id_raza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_raza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `tratamiento`
@@ -439,8 +448,8 @@ ALTER TABLE `persona`
 -- Filtros para la tabla `tratamiento`
 --
 ALTER TABLE `tratamiento`
-  ADD CONSTRAINT `fk_trataenf` FOREIGN KEY (`enfermedad`) REFERENCES `enfermedad` (`id_enfermedad`),
-  ADD CONSTRAINT `fk_tratamiento` FOREIGN KEY (`nombre`) REFERENCES `perro` (`nombre`);
+  ADD CONSTRAINT `fk_tratamiento` FOREIGN KEY (`nombre`) REFERENCES `perro` (`nombre`),
+  ADD CONSTRAINT `tratamiento_ibfk_1` FOREIGN KEY (`enfermedad`) REFERENCES `enfermedad` (`id_enfermedad`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
