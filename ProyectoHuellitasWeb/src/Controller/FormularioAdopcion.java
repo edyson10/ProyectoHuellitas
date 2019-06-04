@@ -71,8 +71,8 @@ public class FormularioAdopcion extends HttpServlet {
 		String responsabilidadperro = request.getParameter("responsabilidad");
 		String visitas = request.getParameter("visita");
 		
-		System.out.println(nombre + apellido + cedula + ciudad + fechaNacimiento + barrio + direccion + telefono + celular + profesion + trabajo);
-		System.out.println(adultos + ninos + edadninos + perro + tipoperro + perrosantes + porqueadoptar + responsabilidadperro + visitas);
+		//System.out.println(nombre + apellido + cedula + ciudad + fechaNacimiento + barrio + direccion + telefono + celular + profesion + trabajo);
+		//System.out.println(adultos + ninos + edadninos + perro + tipoperro + perrosantes + porqueadoptar + responsabilidadperro + visitas);
 		
 		Persona p = new Persona();
 		Formularioadopcion fa = new Formularioadopcion();

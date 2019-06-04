@@ -320,9 +320,9 @@
     <!-- /.sidebar -->
   </aside>
 
+  <!-- CONTENIDO PRINCIPAL DE LA PAGINA START-->
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
@@ -391,6 +391,7 @@
       <!-- /.row -->
     </section>
   </div>
+  <!-- Conetido principal de la pagina end -->
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">

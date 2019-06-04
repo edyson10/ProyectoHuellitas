@@ -94,12 +94,13 @@
 			</div>
 		</c:if>
       	<div class="box-header with-border" align="center">
-              <h3 class="letra-login"> Registro Perrito </h3>
-          </div>
-          <form action="FormularioAdopcion" method="post">
+              <h3 class="letra-login"> Formulario Adopción </h3>
+        </div>
+        <form action="FormularioAdopcion" method="post">
             <div class="row">
               <div class="col-md-1">
               </div>
+              <!-- Opciones ppersona -->
               <div class="col-md-5">
               	<div class="form-group">
                   <label for="exampleInputEmail1">Nombre</label>
@@ -178,6 +179,7 @@
                   <input type="number" name="edades" class="form-control" id="exampleInputPassword1" placeholder="Edades" required>
                 </div>
 
+				<!-- Datos del perro -->
                 <jsp:useBean id="pDao" class="model.PerroDAO" scope="request"></jsp:useBean>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Perro</label>
@@ -197,7 +199,7 @@
                   <label for="exampleInputPassword1">¿Has tenido un perro antes?</label>
                   <select id="perroAntes" name="perroAntes" class="form-control select2" style="width: 100%;">
                   	<option value="Si">Si</option>
-                  	<option value=No">No</option>
+                  	<option value="No">No</option>
                   </select>
                 </div>
 
@@ -210,7 +212,7 @@
                   <label for="exampleInputPassword1">¿Sabes la responsabilidad?</label>
                   <select id="responsabilidad" name="responsabilidad" class="form-control select2" style="width: 100%;">
                   	<option value="Si">Si</option>
-                  	<option value=No">No</option>
+                  	<option value="No">No</option>
                   </select>
                 </div>
 
@@ -218,7 +220,7 @@
                   <label for="exampleInputPassword1">¿Permitirías que uno de nuestros voluntarios fuera a tu casa antes y después de la adopción?</label>
                   <select id="visita" name="visita" class="form-control select2" style="width: 100%;">
                   	<option value="Si">Si</option>
-                  	<option value=No">No</option>
+                  	<option value="No">No</option>
                   </select>
                 </div>
               </div>
@@ -235,7 +237,6 @@
           </div>                                  
         </form>
       </div>
-    </div>
 	 
     <!-- Footer -->
     <div class="footer">

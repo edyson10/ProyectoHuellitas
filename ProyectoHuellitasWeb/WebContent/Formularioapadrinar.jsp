@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -83,6 +84,144 @@
  	  	 	-->	
 	</nav>
 	<!-- Menú nav end -->
+	
+	<!-- Formulario de apadrinamiento Start -->
+	
+	<!--------------------------
+            Formulario Apadrinamiento
+        --------------------------->
+        <div class="container">
+	        <c:set var="alerta" scope="request" value = "${requestScope.msgResultado}"/>
+			<c:if test="${alerta!=null}">  
+				<div class="alert alert-success alert-dismissible" role="alert" style="width:100%;">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+			  		<c:out value="${alerta}"/>
+				</div>
+			</c:if>
+			<div class="box-header with-border" align="center">
+              <h3 class="letra-login"> Formulario Apadrinar </h3>
+          	</div>
+          	<form action="FormApadrinarController" method="post">
+            	<div class="row">
+            		<div class="col-md-1">
+              		</div>
+              		<div class="col-md-5">
+              			<div class="form-group">
+                  			<label for="exampleInputEmail1">Nombre</label>
+                  			<input type="text" name="nombreA" class="form-control" id="ejemploImputNombre" placeholder="Escriba su nombre" required>
+                		</div>
+                		
+                		<div class="form-group">
+		                  	<label for="exampleInputEmail1">Apellido</label>
+		                  	<input type="text" name="apellidoA" class="form-control" id="ejemploImputNombre" placeholder="Escriba su apellido" required>
+		                </div>
+		                
+		                <div class="form-group">
+                  			<label for="exampleInputPassword1">Cédula</label>
+                  			<input type="number" name="cedulaA" class="form-control" id="exampleInputPassword1" placeholder="Cedula" required>
+                		</div>
+                		
+                		<jsp:useBean id="cDao" class="model.CiudadDAO" scope="request"></jsp:useBean>
+                		<div class="form-group">
+		                	<label for="exampleInputPassword1">Ciudad</label>
+		                  	<select id="ciudad" name="ciudadA" class="form-control select2" style="width: 100%;">
+		                    	<c:forEach var="ciudades" items="${cDao.list()}">
+									<option value="${ciudades.idCiudad}">${ciudades.nombreCiudad}</option>
+								</c:forEach>
+		                  	</select>
+                		</div>
+                		
+                		<div class="form-group">
+                  			<label for="exampleInputEmail1">Fecha de Nacimiento</label>
+                  			<input type="date" name="fechaNacA" class="form-control" id="ejemploImputNombre" placeholder="dd/mm/aaaa" required>
+                		</div>
+
+		                <div class="form-group">
+		                  		<label for="exampleInputPassword1">Barrio de Residencia</label>
+		                  <input type="text" name="barrioA" class="form-control" id="exampleInputPassword1" placeholder="Escriba el barrio de residencia" required>
+		                </div>
+
+		                <div class="form-group">
+		                  	<label for="exampleInputPassword1">Dirección de Residencia</label>
+		                  	<input type="text" name="direccionA" class="form-control" id="exampleInputPassword1" placeholder="Escriba la direccion de residencia" required>
+		                </div>
+
+		                <div class="form-group">
+		                  	<label for="exampleInputPassword1">Teléfono Fijo</label>
+		                  	<input type="number" name="fijoA" class="form-control" id="exampleInputPassword1" placeholder="Teléfono" required>
+		                </div>
+
+		                <div class="form-group">
+		                  	<label for="exampleInputPassword1">Teléfono Celular</label>
+		                  	<input type="number" name="celularA" class="form-control" id="exampleInputPassword1" placeholder="Número de celular" required>
+		                </div>
+              		</div>
+              		
+              		<div class="col-md-5">
+              			 <div class="form-group">
+		                  	<label for="exampleInputPassword1">Profesión</label>
+		                  	<input type="text" name="profesionA" class="form-control" id="exampleInputPassword1" placeholder="Escriba su profesión" required>
+		                </div>
+		                
+		                <div class="form-group">
+                  			<label for="exampleInputPassword1">Trabajo Actual</label>
+                  			<input type="text" name="trabajoA" class="form-control" id="exampleInputPassword1" placeholder="Escriba a que se dedica" required>
+                		</div>
+                		
+              			<jsp:useBean id="pDao" class="model.PerroDAO" scope="request"></jsp:useBean>
+                		<div class="form-group">
+                  			<label for="exampleInputPassword1">Perro</label>
+                  			<select id="perro" name="perroA" class="form-control select2" style="width: 100%;">
+                    			<c:forEach var="perros" items="${pDao.list()}">
+									<option value="${perros.nombre}">${perros.nombre}</option>
+								</c:forEach>
+                  			</select>
+                		</div>
+                		
+                		<div class="form-group">
+                  			<label for="exampleInputPassword1">¿En qué tipo de perro estas interesado?</label>
+                  			<input type="text" name="tipoperroA" class="form-control" id="exampleInputPassword1" placeholder="Tipo de perro" required>
+                		</div>
+                
+                		<div class="form-group">
+                  			<label for="exampleInputPassword1">¿Has tenido un perro antes?</label>
+                  			<select id="perroAntesA" name="perroAntesA" class="form-control select2" style="width: 100%;">
+                  				<option value="Si">Si</option>
+                  				<option value="No">No</option>
+                  			</select>
+                		</div>
+                
+                		<div class="form-group">
+                  			<label for="exampleInputPassword1">¿Por qué quieres apadrinar un perro?</label>
+                  			<input type="text" name="porqueapadrinarA" class="form-control" id="exampleInputPassword1" placeholder="¿Por qué?" required>
+                		</div>
+                
+                		<div class="form-group">
+                  			<label for="exampleInputPassword1">¿Realizarias visitas mensualmente?</label>
+                  			<select id="perroAntes" name="visitasMesA" class="form-control select2" style="width: 100%;">
+                  				<option value="Si">Si</option>
+                  				<option value="No">No</option>
+                  			</select>
+                		</div>
+                
+                		<div class="form-group">
+                  			<label for="exampleInputPassword1">Día de la mensualidad</label>
+                  			<input type="text" name="diamensualidadA" class="form-control" id="exampleInputPassword1" placeholder="Día en el que pueda pasar la mensualidad" required>
+                		</div>
+              		</div>
+              		<div class="col-md-1">
+              		</div>
+            	</div>
+            	<div class="row">
+            		<div class="col-md-12" align="center">
+               			<div class="box-footer">
+                  			<button type="submit" class="btn btn-primary">Enviar formulario</button>
+                		</div>
+            		</div>
+          		</div>  
+            </form>
+        </div>
+	<!-- Formulario de apadrinamiento End -->
 	
 	<!-- Footer -->
 		<div class="footer">
