@@ -320,11 +320,50 @@
     <!-- /.sidebar -->
   </aside>
   
-  <!-- 	CONTENIDO DE LA PAGINA REGISTRAR ADOPTADOR START -->
-  
-  <!-- 	CONTENIDO DE LA PAGINA REGISTRAR ADOPTADOR END -->
-  
-  <footer class="main-footer">
+  <!-- 	CONTENIDO DE LA PAGINA LISTA TRATAMIENTO START -->
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <h2>Lista de Apadrinados</h2>
+        <p>Acontinuación escontraras la lista de las personas que han apadrinado y el nombre de la mascota a la cual apadrinó</p>            
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Cédula</th>
+            <th>Nombre persona</th>
+            <th>Apellido persona</th>
+            <th>Nombre del Perro</th>
+            <th>Telefono</th>
+            <th>Fecha de Apadrinamiento</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1090504234</td>
+            <td>Daniel Felipe</td>
+            <td>Gelves Colmenares</td>
+            <td>Rex</td>
+            <td>Calle 15 #7b-44</td>
+            <td>04/04/1997</td>
+            <td>
+              <button type="button" class="btn btn-warning"><a href="buscarAdoptador.html">Ver</a></button>
+              <button type="button" class="btn btn-success">Editar</button>
+              <button type="button" class="btn btn-danger">Eliminar</button>
+
+            </td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+      <div class="row">
+      </div>
+    </section>
+  </div>
+  <!-- 	CONTENIDO DE LA PAGINA LISTA TRATAMIENTO END -->
+
+<footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0.0
     </div>

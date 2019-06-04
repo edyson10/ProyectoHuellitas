@@ -21,13 +21,16 @@ public class Tratamiento implements Serializable {
 
 	private String descripcion;
 
-	private int enfermedad;
-
 	@Temporal(TemporalType.DATE)
 	private Date fechaFin;
 
 	@Temporal(TemporalType.DATE)
 	private Date fechaInicio;
+
+	//bi-directional many-to-one association to Enfermedad
+	@ManyToOne
+	@JoinColumn(name="enfermedad")
+	private Enfermedad enfermedadBean;
 
 	//bi-directional many-to-one association to Perro
 	@ManyToOne
@@ -53,14 +56,6 @@ public class Tratamiento implements Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public int getEnfermedad() {
-		return this.enfermedad;
-	}
-
-	public void setEnfermedad(int enfermedad) {
-		this.enfermedad = enfermedad;
-	}
-
 	public Date getFechaFin() {
 		return this.fechaFin;
 	}
@@ -75,6 +70,14 @@ public class Tratamiento implements Serializable {
 
 	public void setFechaInicio(Date fechaInicio) {
 		this.fechaInicio = fechaInicio;
+	}
+
+	public Enfermedad getEnfermedadBean() {
+		return this.enfermedadBean;
+	}
+
+	public void setEnfermedadBean(Enfermedad enfermedadBean) {
+		this.enfermedadBean = enfermedadBean;
 	}
 
 	public Perro getPerro() {

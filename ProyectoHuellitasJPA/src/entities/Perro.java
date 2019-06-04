@@ -24,6 +24,8 @@ public class Perro implements Serializable {
 
 	private String estado;
 
+	private String foto;
+
 	//bi-directional many-to-one association to Adopcion
 	@OneToMany(mappedBy="perro")
 	private List<Adopcion> adopcions;
@@ -82,6 +84,14 @@ public class Perro implements Serializable {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+	public String getFoto() {
+		return this.foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public List<Adopcion> getAdopcions() {

@@ -2,6 +2,7 @@ package entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -21,6 +22,10 @@ public class Enfermedad implements Serializable {
 	@Column(name="nombre_enfermedad")
 	private String nombreEnfermedad;
 
+	//bi-directional many-to-one association to Tratamiento
+	@OneToMany(mappedBy="enfermedadBean")
+	private List<Tratamiento> tratamientos;
+
 	public Enfermedad() {
 	}
 
@@ -38,6 +43,28 @@ public class Enfermedad implements Serializable {
 
 	public void setNombreEnfermedad(String nombreEnfermedad) {
 		this.nombreEnfermedad = nombreEnfermedad;
+	}
+
+	public List<Tratamiento> getTratamientos() {
+		return this.tratamientos;
+	}
+
+	public void setTratamientos(List<Tratamiento> tratamientos) {
+		this.tratamientos = tratamientos;
+	}
+
+	public Tratamiento addTratamiento(Tratamiento tratamiento) {
+		getTratamientos().add(tratamiento);
+		tratamiento.setEnfermedadBean(this);
+
+		return tratamiento;
+	}
+
+	public Tratamiento removeTratamiento(Tratamiento tratamiento) {
+		getTratamientos().remove(tratamiento);
+		tratamiento.setEnfermedadBean(null);
+
+		return tratamiento;
 	}
 
 }

@@ -83,7 +83,7 @@ public class TratamientoController extends HttpServlet {
 		e = eDao.find(Integer.parseInt(enfermedad));
 		
 		t.setPerro(p);
-		t.setEnfermedad(e.getIdEnfermedad());
+		t.setEnfermedadBean(e);
 		t.setDescripcion(descripcion);
 		
 		tDao.insert(t);

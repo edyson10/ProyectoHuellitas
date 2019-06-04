@@ -320,7 +320,7 @@
     <!-- /.sidebar -->
   </aside>
   
-  <!-- 	CONTENIDO DE LA PAGINA LISTA PPADRINO START -->
+  <!-- 	CONTENIDO DE LA PAGINA LISTA PADRINO START -->
   <div class="content-wrapper">
     <!-- Main content -->
     <section class="content">
@@ -361,7 +361,7 @@
       </div>
     </section>
   </div>
-  <!-- 	CONTENIDO DE LA PAGINA LISTA PPADRINO END -->
+  <!-- 	CONTENIDO DE LA PAGINA LISTA PADRINO END -->
 
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
